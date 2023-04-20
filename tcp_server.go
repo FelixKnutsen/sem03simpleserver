@@ -11,7 +11,7 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	server, err := net.Listen("tcp", "127.0.0.1:")
+	server, err := net.Listen("tcp", "172.17.0.3:8080")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -53,4 +53,10 @@ func main() {
 		}
 	}()
 	wg.Wait()
+
+	dekryptertMelding := mycrypt.Krypter([]rune(string(buf[:n]))), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
+	log.Println("Dekrypter melding: ", string(dekryptertMelding))
+	switch msg := string(dekrypterMelding) { ...
+
+	}
 }
