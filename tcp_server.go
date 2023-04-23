@@ -45,6 +45,11 @@ func main() {
 					case "ping":
 						kryptertMelding := mycrypt.Krypter([]rune("pong"), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
 						_, err = c.Write([]byte(string(kryptertMelding)))
+
+					case "Kjevik":
+						kryptertMelding := mycrypt.Krypter([]rune("kevek"), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
+						_, err = c.Write([]byte(string(kryptertMelding)))
+
 					default:
 						kryptertMelding := mycrypt.Krypter([]rune(msg), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
 						_, err = c.Write([]byte(string(kryptertMelding)))
